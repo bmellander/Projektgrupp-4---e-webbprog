@@ -1,0 +1,184 @@
+.login-module-btn {
+    position: relative;
+    width: 10%;
+    height: 20px;
+}
+
+.login-module {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+
+.module-content {
+    background: #f4f4f4;
+    margin: 10% auto;
+    width: 50%;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.2);
+    position: relative;
+    border-radius: 3px;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.login-close-btn {
+    position: absolute;
+    top: 2%;
+    right: 3%;
+    font-size: 1.5rem;
+    z-index: 1;
+}
+
+.login-close-btn:hover {
+    cursor: pointer;
+    color: rgb(168, 7, 7);
+}
+
+.login-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-validation {
+    margin-bottom: 0.7rem;
+    width: 80%;
+}
+
+.form-validation.error {
+    margin-bottom: 1.5rem;
+    position: relative;
+    border: 1px solid var(--errorColor);
+    border-radius: 2px;
+}
+
+.form-validation.valid {
+    margin-bottom: 0.5rem;
+    position: relative;
+    border: 1px solid var(--validColor);
+    border-radius: 2px;
+}
+
+.form-validation p {
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+    color: var(--errorColor);
+    position: absolute;
+    top: 1.8rem;
+    display: none;
+}
+
+.form-validation.error p {
+    display: block;
+}
+
+.module-input {
+    display: block;
+    padding-left: 0.5rem;
+    outline: none;
+    border-radius: 2px;
+    border: none;
+    height: 2rem;
+    width: 100%;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0,0.5);
+}
+
+.module-input::placeholder {
+    color: #b1b1b1;
+}
+
+.login-input-btn {
+    width: 80%;
+    height: 2rem;
+    border-radius: 2px;
+    background-color: rgb(168, 7, 7);
+    outline: none;
+    border: none;
+    color: var(--white);
+    font-size: 1rem;
+}
+
+.login-input-btn:hover {
+    cursor: pointer;
+    background-color: black;
+    color: #f4f4f4;
+    transition: all 0.4s ease-out;
+}
+
+/* Register module */
+
+.register-module-btn {
+    position: relative;
+    width: 10%;
+    height: 20px;
+}
+
+.register-module {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+
+.register-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-close-btn {
+    position: absolute;
+    top: 2%;
+    right: 3%;
+    font-size: 1.5rem;
+    z-index: 1;
+}
+
+.register-close-btn:hover {
+    cursor: pointer;
+    color: rgb(168, 7, 7);
+}
+
+.register-input-btn {
+    width: 80%;
+    height: 2rem;
+    border-radius: 2px;
+    background-color: rgb(168, 7, 7);
+    outline: none;
+    border: none;
+    color: var(--white);
+    font-size: 1rem;
+}
+
+.register-input-btn:hover {
+    cursor: pointer;
+    background-color: black;
+    color: #f4f4f4;
+    transition: all 0.4s ease-out;
+}
