@@ -7,32 +7,33 @@
         $validationError = false;
         
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $recaptchaSecret = 'LäggTillNyckelHär'; // Tog bort nyckeln av säkerhetsskäl
-        $recaptchaResponse = $_POST['g-recaptcha-response'];
+            $recaptchaSecret = 'INSERT_API_KEY'; // Tog bort nyckeln av säkerhetsskäl
+            $recaptchaResponse = $_POST['g-recaptcha-response'];
 
-        // Verify reCAPTCHA response
-        $recaptchaUrl = 'https://www.google.com/recaptcha/api/siteverify';
-        $recaptchaData = [
-            'secret' => $recaptchaSecret,
-            'response' => $recaptchaResponse,
-        ];
+            // Verify reCAPTCHA response
+            $recaptchaUrl = 'https://www.google.com/recaptcha/api/siteverify';
+            $recaptchaData = [
+                'secret' => $recaptchaSecret,
+                'response' => $recaptchaResponse,
+            ];
 
-        $options = [
-            'http' => [
-                'method' => 'POST',
-                'header' => 'Content-Type: application/x-www-form-urlencoded',
-                'content' => http_build_query($recaptchaData),
-            ],
-        ];
-        $context = stream_context_create($options);
-        $verify = file_get_contents($recaptchaUrl, false, $context);
-        $captchaSuccess = json_decode($verify);
+            $options = [
+                'http' => [
+                    'method' => 'POST',
+                    'header' => 'Content-Type: application/x-www-form-urlencoded',
+                    'content' => http_build_query($recaptchaData),
+                ],
+            ];
+            $context = stream_context_create($options);
+            $verify = file_get_contents($recaptchaUrl, false, $context);
+            $captchaSuccess = json_decode($verify);
 
-        if ($captchaSuccess->success == false) {
-            echo "<script>alert('reCAPTCHA verification failed. Redirecting...');</script>";
-            echo "<script>setTimeout(function() { window.location.href = 'index.php'; }, 2000);</script>";
-            exit();
-        }
+            if ($captchaSuccess->success == false) {
+                echo "<script>alert('reCAPTCHA verification failed. Redirecting...');</script>";
+                echo "<script>setTimeout(function() { window.location.href = 'index.php'; }, 2000);</script>";
+                exit();
+            }
+            
             if (empty($_POST["username"]) || empty($_POST["email"]) || empty($_POST["password"])) {
                 exit();
             } else {
