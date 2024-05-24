@@ -7,7 +7,7 @@
         $validationError = false;
         
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $recaptchaSecret = 'YOUR_SECRET_KEY';
+            $recaptchaSecret = 'LäggTillNyckelHär'; // Tog bort nyckeln av säkerhetsskäl
         $recaptchaResponse = $_POST['g-recaptcha-response'];
 
         // Verify reCAPTCHA response
