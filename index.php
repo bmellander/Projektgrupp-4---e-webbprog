@@ -17,6 +17,7 @@ if(isset($_SESSION['userID']) && isset($_SESSION['username'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login/Register</title>
         <link rel="stylesheet" href="style.css">
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
 
     <body>
@@ -60,6 +61,7 @@ if(isset($_SESSION['userID']) && isset($_SESSION['username'])) {
                         <input type="password" class="module-input" id="register-password-conf" name="password-confirm" placeholder="Confirm your password">
                         <p>Error Message</p>
                     </div>
+                    <div class="g-recaptcha" data-sitekey="6LcZyuMpAAAAADWQg9RTL8u7OUc_BGQuZBN6CdsR"></div>
                     <input type="submit" class="register-input-btn" value="Sign Up">
                 </form>
             </div>
